@@ -50,7 +50,7 @@
         }
 
         #customContextMenu {
-            color: #797979;
+            color: black;
             display: none;
             position: absolute;
             background: rgba(255, 255, 255, 0.9);
@@ -123,8 +123,25 @@
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
             contextMenu.style.display = 'block';
-            contextMenu.style.left = `${e.pageX}px`;
-            contextMenu.style.top = `${e.pageY}px`;
+
+            // Posicionar el menú
+            const menuWidth = contextMenu.offsetWidth;
+            const menuHeight = contextMenu.offsetHeight;
+            let posX = e.pageX;
+            let posY = e.pageY;
+
+            // Ajustar posición si está cerca del borde derecho
+            if (posX + menuWidth > window.innerWidth) {
+                posX = window.innerWidth - menuWidth - 10; // Margen de 10px
+            }
+
+            // Ajustar posición si está cerca del borde inferior
+            if (posY + menuHeight > window.innerHeight) {
+                posY = window.innerHeight - menuHeight - 10; // Margen de 10px
+            }
+
+            contextMenu.style.left = `${posX}px`;
+            contextMenu.style.top = `${posY}px`;
         });
 
         document.addEventListener('click', () => {
