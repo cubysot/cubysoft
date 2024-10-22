@@ -1,0 +1,32 @@
+/* Estilos para el contenedor de Helloworld */
+.hello-container {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #282c34;
+    color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo específico para el título */
+.hello-title {
+    font-size: 3rem;
+    animation: fadeIn 3s ease-in-out;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 10px;
+}
+
+/* Animación suave de entrada */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

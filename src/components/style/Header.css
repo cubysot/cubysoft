@@ -1,0 +1,90 @@
+.header {
+    background-color: black;
+    padding: 40px 0px;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo y texto */
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+.LogoIcon {
+    width: 50px;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    justify-content: center;
+    gap: 24px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1c5cbd;
+}
+
+/* Botón de Connect Wallet */
+.connect-wallet {
+    background-color: #0d72ad;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.connect-wallet:hover {
+    background-color: #1c5cbd;
+    color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 40px 0px;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .logo-column {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .connect-wallet {
+        justify-content: center;
+    }
+}
