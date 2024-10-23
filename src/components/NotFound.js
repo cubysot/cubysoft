@@ -5,7 +5,6 @@ import './style/NotFound.css';
 export default function NotFound() {
     return (
         <div className="not-found-container">
-
             <main className="main-content">
                 <div className="content-center">
                     <h1 className="error-code">404</h1>

@@ -6,9 +6,12 @@ import LogoCubysoft from '../../assets/Logo_Cubysoft.png';
 const Header = () => {
     return (
         <header className="header">
+            <div className="header-background-blur"></div>
             <nav className="nav">
                 <div className="nav-column logo-column">
-                    <img className='LogoIcon' src={LogoCubysoft} alt='Logo Cubysoft' />
+                    <Link to="/">
+                        <img className="LogoIcon" src={LogoCubysoft} alt="Logo Cubysoft" />
+                    </Link>
                     <span className="logo-text">Cubysoft</span>
                 </div>
                 <div className="nav-column nav-links">
