@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximamente Cubysoft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4c8cff, #a2c2ff);
+            color: white;
+            text-align: center;
+            user-select: none; /* No permitir selección de texto */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            color: #fff;
+        }
+
+        #customContextMenu {
+            color: black;
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            animation: fadeInMenu 0.2s ease;
+        }
+
+        @keyframes fadeInMenu {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #customContextMenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #customContextMenu li {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #customContextMenu li:hover {
+            background: #e7e7e7; /* Color de fondo al pasar el mouse */
+        }
+
+        #customContextMenu li:active {
+            background: #0056b3; /* Color de fondo al hacer clic */
+        }
+
+        #customContextMenu i {
+            margin-right: 10px; /* Espaciado entre el icono y el texto */
+        }
+    </style>
+</head>
+<body>
+    <h1>Próximamente Cubysoft</h1>
+    <footer>&copy; 2024 Cubysoft. Todos los derechos reservados.</footer>
+
+    <div id="customContextMenu">
+        <ul>
+            <li onclick="handleOption('una semana')">
+                <i class="fas fa-clock"></i> Esperar una semana
+            </li>
+            <li onclick="handleOption('un mes')">
+                <i class="fas fa-calendar-alt"></i> Esperar un mes
+            </li>
+            <li onclick="handleOption('más tiempo')">
+                <i class="fas fa-hourglass-half"></i> Esperar más tiempo
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const contextMenu = document.getElementById('customContextMenu');
+
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            contextMenu.style.display = 'block';
+
+            // Posicionar el menú
+            const menuWidth = contextMenu.offsetWidth;
+            const menuHeight = contextMenu.offsetHeight;
+            let posX = e.pageX;
+            let posY = e.pageY;
+
+            // Ajustar posición si está cerca del borde derecho
+            if (posX + menuWidth > window.innerWidth) {
+                posX = window.innerWidth - menuWidth - 10; // Margen de 10px
+            }
+
+            // Ajustar posición si está cerca del borde inferior
+            if (posY + menuHeight > window.innerHeight) {
+                posY = window.innerHeight - menuHeight - 10; // Margen de 10px
+            }
+
+            contextMenu.style.left = `${posX}px`;
+            contextMenu.style.top = `${posY}px`;
+        });
+
+        document.addEventListener('click', () => {
+            contextMenu.style.display = 'none';
+        });
+
+        function handleOption(option) {
+            alert(`Has seleccionado: ${option}`);
+            contextMenu.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
