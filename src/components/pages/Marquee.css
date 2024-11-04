@@ -1,0 +1,22 @@
+/* Marquee.css */
+.marquee {
+    overflow: hidden; /* Oculta el contenido que no está visible */
+    white-space: nowrap; /* Mantiene el contenido en una sola línea */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.marquee-content {
+    display: inline-block; /* Asegura que el contenido se muestre en línea */
+    animation: marquee 10s linear infinite; /* Animación de desplazamiento */
+}
+
+.marquee-item {
+    display: inline-block;
+    padding: 20px; /* Espaciado entre iconos */
+    font-size: 24px; /* Tamaño del icono */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}

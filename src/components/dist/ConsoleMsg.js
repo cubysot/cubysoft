@@ -12,7 +12,7 @@ console.log('%cPosdata: Diseño original: Discord', 'color: #222; font-weight: n
 const ConsoleMsg = () => {
     useEffect(() => {
         const checkDevTools = setInterval(() => {
-            // const devToolsOpen = /./;
+            const devToolsOpen = /./;
             const threshold = 160; // Ancho mínimo para la consola
 
             if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {

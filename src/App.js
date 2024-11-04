@@ -41,7 +41,7 @@ const Layout = () => {
     const hideHeaderFooter = location.pathname === '/hello-world';
 
     return (
-        <ConsoleMsg>
+        // <ConsoleMsg>
             <div className="App">
             {!hideHeaderFooter && <Header />}
             <main>
@@ -67,7 +67,7 @@ const Layout = () => {
             </main>
             {!hideHeaderFooter && <Footer />}
         </div>
-        </ConsoleMsg>
+        // </ConsoleMsg>
     );
 };
 
