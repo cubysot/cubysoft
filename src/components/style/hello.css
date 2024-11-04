@@ -1,22 +1,24 @@
 /* Estilos para el contenedor de Helloworld */
 .hello-container {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #282c34;
     color: #61dafb;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0 20px; /* Añadido padding para evitar que el texto toque los bordes */
 }
 
 /* Estilo específico para el título */
 .hello-title {
-    font-size: 3rem;
+    font-size: 5vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    max-font-size: 3rem; /* Tamaño máximo para pantallas grandes */
     animation: fadeIn 3s ease-in-out;
     letter-spacing: 0.1em;
     border-bottom: 2px solid #61dafb;
     padding-bottom: 10px;
+    text-align: center; /* Asegura que el texto esté centrado en pantallas pequeñas */
 }
 
 /* Animación suave de entrada */
@@ -28,5 +30,12 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .hello-title {
+        font-size: 6vw; /* Aumenta el tamaño de la fuente en pantallas pequeñas */
     }
 }
