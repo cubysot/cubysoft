@@ -1,3 +1,5 @@
+//src/components/dist/ConsoleMsg.js
+
 import { useEffect } from 'react';
 
 // Mensajes estilizados en la consola

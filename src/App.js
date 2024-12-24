@@ -24,7 +24,6 @@ import RedirectDc from './socials/RedirectDc';
 
 ///////// DevTools /////////
 
-import ConsoleMsg from './components/dist/ConsoleMsg';
 import './App.css'
 
 function App() {
@@ -41,8 +40,7 @@ const Layout = () => {
     const hideHeaderFooter = location.pathname === '/hello-world';
 
     return (
-        // <ConsoleMsg>
-            <div className="App">
+        <div className="App">
             {!hideHeaderFooter && <Header />}
             <main>
                 <Routes>
@@ -67,7 +65,6 @@ const Layout = () => {
             </main>
             {!hideHeaderFooter && <Footer />}
         </div>
-        // </ConsoleMsg>
     );
 };
 
