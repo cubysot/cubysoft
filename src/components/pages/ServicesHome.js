@@ -1,8 +1,9 @@
 import React from 'react';
-import { CiGlobe } from "react-icons/ci";
-import { IoCode } from "react-icons/io5";
-import { FiSmartphone } from "react-icons/fi";
+import { GiDialPadlock } from "react-icons/gi";
 import { CiStar } from "react-icons/ci";
+import { GiLongLeggedSpider } from "react-icons/gi";
+import { GiFallingBomb } from "react-icons/gi";
+import { GiChewedSkull } from "react-icons/gi";
 import SpaceContent from '../content/spacecontent'
 import '../style/ServiceHome.css';
 import Placeholder from '../../assets/GroupCenter.svg'
@@ -10,23 +11,28 @@ import Placeholder from '../../assets/GroupCenter.svg'
 const ServiceHome = () => {
     return (
         <div>
-            <h1 className='Txt_center'>Nuestros Servicios</h1>
+            <h1 className='Txt_center'>Nuestros Servicios de Ciberseguridad</h1>
             <SpaceContent />
             <div className="service-container">
                 <div className="service-card">
-                    <CiGlobe />
-                    <h2>Desarrollo Web</h2>
-                    <p>Creamos sitios web responsivos y atractivos que impulsan tu presencia en línea.</p>
+                    <GiDialPadlock />
+                    <h2>Auditoría de Seguridad</h2>
+                    <p>Realizamos auditorías exhaustivas para identificar vulnerabilidades en tus sistemas.</p>
                 </div>
                 <div className="service-card">
-                    <IoCode />
-                    <h2>Desarrollo de Software</h2>
-                    <p>Desarrollamos soluciones de software personalizadas para optimizar tus procesos de negocio.</p>
+                    <GiLongLeggedSpider />
+                    <h2>Consultoría en Ciberseguridad</h2>
+                    <p>Ofrecemos asesoramiento experto para mejorar la seguridad de tu infraestructura.</p>
                 </div>
                 <div className="service-card">
-                    <FiSmartphone />
-                    <h2>Aplicaciones Móviles</h2>
-                    <p>Diseñamos y desarrollamos aplicaciones móviles intuitivas para iOS y Android.</p>
+                    <GiChewedSkull />
+                    <h2>Monitoreo de Seguridad</h2>
+                    <p>Proveemos servicios de monitoreo continuo para detectar y responder a amenazas en tiempo real.</p>
+                </div>
+                <div className='service-card'>
+                    <GiFallingBomb />
+                    <h2>Capacitación en Seguridad</h2>
+                    <p>Capacitamos a tu equipo en las mejores prácticas de ciberseguridad.</p>
                 </div>
             </div>
             <SpaceContent />

@@ -1,22 +1,49 @@
 /* Marquee.css */
 .marquee {
-    overflow: hidden; /* Oculta el contenido que no está visible */
-    white-space: nowrap; /* Mantiene el contenido en una sola línea */
-    width: 100%; /* Ocupa todo el ancho disponible */
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative; /* Control total del posicionamiento */
 }
 
 .marquee-content {
-    display: inline-block; /* Asegura que el contenido se muestre en línea */
-    animation: marquee 10s linear infinite; /* Animación de desplazamiento */
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    will-change: transform; /* Optimización */
 }
 
+.marquee-content:hover {
+    animation-play-state: paused; /* Pausa al pasar el mouse */
+}
+
+/* Los elementos dentro del marquee */
 .marquee-item {
     display: inline-block;
-    padding: 20px; /* Espaciado entre iconos */
-    font-size: 24px; /* Tamaño del icono */
+    padding: 40px;
+    font-size: 84px;
+    transition: transform 0.3s ease; /* Suaviza la interacción */
+}
+
+.marquee-item:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+.FaCloudflare {
+    color: #f38020;
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Solo recorre la mitad del contenido duplicado */
+    }
+}
+
+/* Optimización para usuarios con preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+        animation: none;
+    }
 }
